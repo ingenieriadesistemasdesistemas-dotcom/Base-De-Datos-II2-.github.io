@@ -4,12 +4,206 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repositorio Académico - Base de Datos II</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        /* 🔹 NAVBAR */
+        .navbar {
+            background-color: #003366;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 30px;
+        }
+
+        .navbar .logo {
+            width: 80px;
+            height: auto;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            padding: 6px 12px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .navbar ul li a:hover,
+        .navbar ul li a.active {
+            background-color: #0059b3;
+        }
+
+        /* 🔹 Botón GitHub en navbar */
+        .navbar ul li a.github-btn-nav {
+            background-color: #24292e;
+            color: white;
+            border-radius: 6px;
+            padding: 6px 12px;
+        }
+
+        .navbar ul li a.github-btn-nav:hover {
+            background-color: #444d56;
+        }
+
+        /* 🔹 SECCIONES */
+        section {
+            padding: 40px 10%;
+        }
+
+        .main-title {
+            text-align: center;
+            background: linear-gradient(to right, #004080, #0066cc);
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .main-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .main-title h2 {
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+
+        .user-info {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .user-photo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 4px solid white;
+        }
+
+        .seccion h2 {
+            color: #004080;
+        }
+
+        /* 🔹 PROYECTOS */
+        .week-container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .week {
+            background: #f8f9fa;
+            border-left: 5px solid #004080;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        .week h3 {
+            color: #004080;
+            margin-bottom: 5px;
+        }
+
+        .week-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .week-buttons a {
+            background-color: #0056b3;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.3s;
+            font-size: 14px;
+        }
+
+        .week-buttons a:hover {
+            background-color: #003d80;
+        }
+
+        /* 🔹 Botón GitHub */
+        .github-btn {
+            background-color: #24292e;
+            color: white;
+            border-radius: 8px;
+            padding: 8px 15px;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .github-btn:hover {
+            background-color: #444d56;
+        }
+
+        /* 🔹 FORMULARIOS */
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-section input, .form-section textarea {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-section button {
+            background-color: #004080;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-section button:hover {
+            background-color: #003366;
+        }
+
+        /* 🔹 FOOTER */
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
 
-    <!-- 🔹 Barra de navegación -->
+    <!-- 🔹 NAVBAR -->
     <nav class="navbar">
         <img src="logo upla.png" alt="Logo UPLA" class="logo">
         <ul>
@@ -18,11 +212,11 @@
             <li><a href="#proyectos"><i class="fas fa-folder-open"></i> Proyectos</a></li>
             <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
             <li><a href="#login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
-             <li><a href="https://github.com/ingenieriadesistemasdesistemas-dotcom/Base-De-Datos-II2-.github.io.git" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+            <li><a href="https://github.com/WilsonSamirFlores" class="github-btn-nav" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
         </ul>
     </nav>
 
-    <!-- 🔹 Sección Inicio -->
+    <!-- 🔹 INICIO -->
     <section id="inicio" class="main-title">
         <h1>Repositorio Académico</h1>
         <h2>Base de Datos II - Evolución Semanal</h2>
@@ -34,7 +228,7 @@
         </div>
     </section>
 
-    <!-- 🔹 Sección Sobre Mí -->
+    <!-- 🔹 SOBRE MÍ -->
     <section id="sobre-mi" class="seccion">
         <h2>Sobre Mí</h2>
         <p>Soy estudiante de la Universidad Peruana Los Andes en el curso de Base de Datos II. 
@@ -42,120 +236,136 @@
         Este repositorio muestra mi progreso y los trabajos realizados a lo largo del ciclo académico.</p>
     </section>
 
-    <!-- 🔹 Sección Proyectos -->
+    <!-- 🔹 PROYECTOS -->
     <section id="proyectos" class="week-container">
         <h2>Proyectos - Evolución Semanal</h2>
 
-        <!-- Ejemplo de semana (puedes dejar igual que antes o resumirlo si quieres) -->
+        <!-- 🔹 Semana 1 -->
         <div class="week">
             <h3>Semana 1</h3>
             <p>Tema: Introducción al Tema</p>
             <div class="week-buttons">
-                <a href="https://docs.google.com/presentation/d/1c31xjqFTZ6FEymlUUxrFuCaaYVGfC1vD/edit?usp=sharing&ouid=111745636292115654605&rtpof=true&sd=true" target="_blank">Informe-Tecnico-Comparativo-Arquitecturas-Centralizadas-Cliente-Servidor-y-Distribuidas.pdf - PPT</a>
-                <a href="https://docs.google.com/document/d/1N9c5HcW_aNVYqs9Qokr4q-GsrEWZ9D7D/edit?usp=sharing&ouid=111745636292115654605&rtpof=true&sd=true" target="_blank">MANUAL PARA SUBIR LA PAGINA WEB A GIT HUB - Word</a>
-                <a href="https://docs.google.com/document/d/1DWsEZMuGGohIRKNTKv14a-96YjIWCsKh/edit?usp=sharing&ouid=111745636292115654605&rtpof=true&sd=true" target="_blank">Manual_ Creación de una cuenta en GitHub - Word</a>
+                <a href="https://docs.google.com/presentation/d/1c31xjqFTZ6FEymlUUxrFuCaaYVGfC1vD/edit?usp=sharing" target="_blank">Informe Técnico - PPT</a>
+                <a href="https://docs.google.com/document/d/1N9c5HcW_aNVYqs9Qokr4q-GsrEWZ9D7D/edit?usp=sharing" target="_blank">Manual GitHub - Word</a>
+                <a href="https://docs.google.com/document/d/1DWsEZMuGGohIRKNTKv14a-96YjIWCsKh/edit?usp=sharing" target="_blank">Creación de Cuenta GitHub - Word</a>
+                <a href="https://github.com/ingenieriadesistemasdesistemas-dotcom/Base-De-Datos-II2-.github.io/tree/main/SEMANAS%20BASE%20DE%20DATOS%20II/SEMANA%201" class="github-btn" target="_blank"><i class="fab fa-github"></i> Ver en Ver en GitHub</a>
             </div>
         </div>
+
+        <!-- 🔹 Semana 2 -->
         <div class="week">
             <h3>Semana 2</h3>
-            <p>Tema: Introducción al Tema</p>
+            <p>Tema: Instalación SQL Server</p>
             <div class="week-buttons">
-                <a href="https://docs.google.com/document/d/1RY37XaNEzRIzjTzuP5-mqGm0GcUq7QUh/edit?usp=sharing&ouid=111745636292115654605&rtpof=true&sd=true" target="_blank">Guia de instalacion de SQL Server - Word</a>
+                <a href="https://docs.google.com/document/d/1RY37XaNEzRIzjTzuP5-mqGm0GcUq7QUh/edit?usp=sharing" target="_blank">Guía Instalación - Word</a>
                 <a href="https://docs.google.com/document/d/1DWsEZMuGGohIRKNTKv14a-96YjIWCsKh/edit?usp=sharing" target="_blank">Modelo - Word</a>
+                <a href="https://github.com/ingenieriadesistemasdesistemas-dotcom/Base-De-Datos-II2-.github.io/tree/main/SEMANAS%20BASE%20DE%20DATOS%20II/SEMANA%202" class="github-btn" target="_blank"><i class="fab fa-github"></i> Ver en Ver en GitHub</a>
             </div>
         </div>
+
+        <!-- 🔹 Semana 3 -->
         <div class="week">
             <h3>Semana 3</h3>
-            <p>Tema: Introducción al Tema</p>
+            <p>Tema: Cuadro Comparativo Bases de Datos</p>
             <div class="week-buttons">
-                <a href="https://docs.google.com/document/d/1IfpQxymf3zXPFaLD-IhzS1W7b4aFHcIC/edit?usp=sharing&ouid=111745636292115654605&rtpof=true&sd=true" target="_blank">Cuadro_Comparativo_Bases_de_Datos - Word</a>
+                <a href="https://docs.google.com/document/d/1IfpQxymf3zXPFaLD-IhzS1W7b4aFHcIC/edit?usp=sharing" target="_blank">Cuadro Comparativo - Word</a>
+                <a href="https://github.com/ingenieriadesistemasdesistemas-dotcom/Base-De-Datos-II2-.github.io/tree/main/SEMANAS%20BASE%20DE%20DATOS%20II/SEMANA%203" class="github-btn" target="_blank"><i class="fab fa-github"></i> Ver en Ver en GitHub</a>
+            </div>
         </div>
+
+        <!-- 🔹 Semana 4 -->
         <div class="week">
             <h3>Semana 4</h3>
-            <p>Tema: Introducción al Tema</p>
+            <p>Tema: Modelado de Bases de Datos</p>
             <div class="week-buttons">
-                <a href="https://drive.google.com/file/d/1SEB2bgeQbtQsKqNMDYNYvHhRSdYuyOGT/view?usp=sharing" target="_blank">Normalización y Denormalización - pdf</a>
-                <a href="https://drive.google.com/file/d/1XdP19D5iniQvXdZK8gndxLTkwyLTZyjN/view?usp=sharing" target="_blank">Modelado-de-Base-de-Datos-para-Sistema-Bancario - pdf</a>
-                <a href="https://drive.google.com/file/d/1emWFCnCoQVVVA5VnxdasfxZpPe6VVnIJ/view?usp=sharing" target="_blank">Criterio de Seleccion Para Startup - pdf</a>
-                <a href="https://drive.google.com/file/d/190yKiCgOda0dFdPWOOfJMkVPFd1HKAzt/view?usp=sharing" target="_blank">Comparacion-de-Arquitecturas-Cliente-Servidor-vs-Nube-para-E-commerce - pdf</a>
-            </div>
+                <a href="https://drive.google.com/file/d/1SEB2bgeQbtQsKqNMDYNYvHhRSdYuyOGT/view" target="_blank">Normalización - PDF</a>
+                <a href="https://drive.google.com/file/d/1XdP19D5iniQvXdZK8gndxLTkwyLTZyjN/view" target="_blank">Sistema Bancario - PDF</a>
+                <a href="https://github.com/ingenieriadesistemasdesistemas-dotcom/Base-De-Datos-II2-.github.io/tree/main/SEMANAS%20BASE%20DE%20DATOS%20II/SEMANA%204" class="github-btn" target="_blank"><i class="fab fa-github"></i> Ver en GitHub</a>
             </div>
         </div>
+
+        <!-- 🔹 Semana 5 -->
         <div class="week">
             <h3>Semana 5</h3>
-            <p>Tema: Introducción al Tema</p>
+            <p>Tema: Diseño Lógico de Base de Datos</p>
             <div class="week-buttons">
-                <a href="https://drive.google.com/file/d/1liw4ymIB1pGkhfd6d-2_OlkGEdbFguvt/view?usp=sharing" target="_blank">Manual para subir Azure - pdf</a>
-                <a href="https://drive.google.com/file/d/163SfmZmPCP-ksN8oe6IzVXlB5Vz7Fyml/view?usp=sharing" target="_blank">Manual de creación Azure - pdf</a>
+                <a href="https://drive.google.com/file/d/1xyzABC/view" target="_blank">Ejercicio BD - Word</a>
+                <a href="https://github.com/ingenieriadesistemasdesistemas-dotcom/Base-De-Datos-II2-.github.io/tree/main/SEMANAS%20BASE%20DE%20DATOS%20II/SEMANA%205" class="github-btn" target="_blank"><i class="fab fa-github"></i>Ver en GitHub</a>
             </div>
         </div>
+
+        <!-- 🔹 Semana 6 -->
         <div class="week">
             <h3>Semana 6</h3>
-            <p>Tema: Introducción al Tema</p>
+            <p>Tema: Normalización y Dependencias</p>
             <div class="week-buttons">
-                <a href="https://docs.google.com/presentation/d/1c31xjqFTZ6FEymlUUxrFuCaaYVGfC1vD/edit?usp=sharing" target="_blank">Actividad 1 - Canva</a>
-                <a href="https://docs.google.com/document/d/1DWsEZMuGGohIRKNTKv14a-96YjIWCsKh/edit?usp=sharing" target="_blank">Actividad 2 - Word</a>
-                <a href="https://docs.google.com/document/d/1N9c5HcW_aNVYqs9Qokr4q-GsrEWZ9D7D/edit?usp=sharing" target="_blank">Actividad 3 - Word</a>
+                <a href="https://drive.google.com/file/d/1abcDEF/view" target="_blank">Normalización Avanzada - PDF</a>
+                <a href="https://github.com/ingenieriadesistemasdesistemas-dotcom/Base-De-Datos-II2-.github.io/tree/main/SEMANAS%20BASE%20DE%20DATOS%20II/SEMANA%206" class="github-btn" target="_blank"><i class="fab fa-github"></i> Ver en GitHub</a>
             </div>
         </div>
+
+        <!-- 🔹 Semana 7 -->
         <div class="week">
             <h3>Semana 7</h3>
-            <p>Tema: Introducción al Tema</p>
+            <p>Tema: Examen Parcial y Proyecto Intermedio</p>
             <div class="week-buttons">
-                <a href="https://docs.google.com/presentation/d/1c31xjqFTZ6FEymlUUxrFuCaaYVGfC1vD/edit?usp=sharing" target="_blank">Actividad 1 - Canva</a>
-                <a href="https://docs.google.com/document/d/1DWsEZMuGGohIRKNTKv14a-96YjIWCsKh/edit?usp=sharing" target="_blank">Actividad 2 - Word</a>
-                <a href="https://docs.google.com/document/d/1N9c5HcW_aNVYqs9Qokr4q-GsrEWZ9D7D/edit?usp=sharing" target="_blank">Actividad 3 - Word</a>
+                <a href="https://drive.google.com/file/d/1ghiJKL/view" target="_blank">Proyecto Intermedio - PDF</a>
+                <a href="https://github.com/WilsonSamirFlores/semana7" class="github-btn" target="_blank"><i class="fab fa-github"></i>Ver en GitHub</a>
             </div>
         </div>
+
+        <!-- 🔹 Semana 8 -->
         <div class="week">
             <h3>Semana 8</h3>
-            <p>Tema: Introducción al Tema</p>
+            <p>Tema: Consultas SQL</p>
             <div class="week-buttons">
-                <a href="https://docs.google.com/presentation/d/1c31xjqFTZ6FEymlUUxrFuCaaYVGfC1vD/edit?usp=sharing" target="_blank">Actividad 1 - Canva</a>
-                <a href="https://docs.google.com/document/d/1DWsEZMuGGohIRKNTKv14a-96YjIWCsKh/edit?usp=sharing" target="_blank">Actividad 2 - Word</a>
-                <a href="https://docs.google.com/document/d/1N9c5HcW_aNVYqs9Qokr4q-GsrEWZ9D7D/edit?usp=sharing" target="_blank">Actividad 3 - Word</a>
+                <a href="https://drive.google.com/file/d/1mnoPQR/view" target="_blank">Consultas SQL - Word</a>
+                <a href="https://github.com/WilsonSamirFlores/semana8" class="github-btn" target="_blank"><i class="fab fa-github"></i>Ver en GitHub</a>
             </div>
         </div>
+
+        <!-- 🔹 Semana 9 -->
         <div class="week">
             <h3>Semana 9</h3>
-            <p>Tema: Introducción al Tema</p>
+            <p>Tema: Triggers y Procedimientos</p>
             <div class="week-buttons">
-                <a href="https://docs.google.com/presentation/d/1c31xjqFTZ6FEymlUUxrFuCaaYVGfC1vD/edit?usp=sharing" target="_blank">Actividad 1 - Canva</a>
-                <a href="https://docs.google.com/document/d/1DWsEZMuGGohIRKNTKv14a-96YjIWCsKh/edit?usp=sharing" target="_blank">Actividad 2 - Word</a>
-                <a href="https://docs.google.com/document/d/1N9c5HcW_aNVYqs9Qokr4q-GsrEWZ9D7D/edit?usp=sharing" target="_blank">Actividad 3 - Word</a>
+                <a href="https://drive.google.com/file/d/1stuVWX/view" target="_blank">Ejemplos Triggers - PDF</a>
+                <a href="https://github.com/WilsonSamirFlores/semana9" class="github-btn" target="_blank"><i class="fab fa-github"></i>Ver en GitHub</a>
             </div>
         </div>
+
+        <!-- 🔹 Semana 10 -->
         <div class="week">
             <h3>Semana 10</h3>
-            <p>Tema: Introducción al Tema</p>
+            <p>Tema: Optimización de Consultas</p>
             <div class="week-buttons">
-                <a href="https://docs.google.com/presentation/d/1c31xjqFTZ6FEymlUUxrFuCaaYVGfC1vD/edit?usp=sharing" target="_blank">Actividad 1 - Canva</a>
-                <a href="https://docs.google.com/document/d/1DWsEZMuGGohIRKNTKv14a-96YjIWCsKh/edit?usp=sharing" target="_blank">Actividad 2 - Word</a>
-                <a href="https://docs.google.com/document/d/1N9c5HcW_aNVYqs9Qokr4q-GsrEWZ9D7D/edit?usp=sharing" target="_blank">Actividad 3 - Word</a>
+                <a href="https://drive.google.com/file/d/1yzA123/view" target="_blank">Optimización - Word</a>
+                <a href="https://github.com/WilsonSamirFlores/semana10" class="github-btn" target="_blank"><i class="fab fa-github"></i>Ver en GitHub</a>
             </div>
         </div>
+
+        <!-- 🔹 Semana 11 -->
         <div class="week">
             <h3>Semana 11</h3>
-            <p>Tema: Introducción al Tema</p>
+            <p>Tema: Seguridad en Bases de Datos</p>
             <div class="week-buttons">
-                <a href="https://docs.google.com/presentation/d/1c31xjqFTZ6FEymlUUxrFuCaaYVGfC1vD/edit?usp=sharing" target="_blank">Actividad 1 - Canva</a>
-                <a href="https://docs.google.com/document/d/1DWsEZMuGGohIRKNTKv14a-96YjIWCsKh/edit?usp=sharing" target="_blank">Actividad 2 - Word</a>
-                <a href="https://docs.google.com/document/d/1N9c5HcW_aNVYqs9Qokr4q-GsrEWZ9D7D/edit?usp=sharing" target="_blank">Actividad 3 - Word</a>
+                <a href="https://drive.google.com/file/d/1zzzQWE/view" target="_blank">Seguridad - PDF</a>
+                <a href="https://github.com/WilsonSamirFlores/semana11" class="github-btn" target="_blank"><i class="fab fa-github"></i>Ver en GitHub</a>
             </div>
         </div>
+
+        <!-- 🔹 Semana 12 -->
         <div class="week">
             <h3>Semana 12</h3>
-            <p>Tema: Introducción al Tema</p>
+            <p>Tema: Proyecto Final</p>
             <div class="week-buttons">
-                <a href="https://docs.google.com/presentation/d/1c31xjqFTZ6FEymlUUxrFuCaaYVGfC1vD/edit?usp=sharing" target="_blank">Actividad 1 - Canva</a>
-                <a href="https://docs.google.com/document/d/1DWsEZMuGGohIRKNTKv14a-96YjIWCsKh/edit?usp=sharing" target="_blank">Actividad 2 - Word</a>
-                <a href="https://docs.google.com/document/d/1N9c5HcW_aNVYqs9Qokr4q-GsrEWZ9D7D/edit?usp=sharing" target="_blank">Actividad 3 - Word</a>
+                <a href="https://drive.google.com/file/d/1final123/view" target="_blank">Informe Final - PDF</a>
+                <a href="https://github.com/WilsonSamirFlores/semana12" class="github-btn" target="_blank"><i class="fab fa-github"></i>Ver en GitHub</a>
             </div>
         </div>
-        <!-- Agrega aquí más semanas si lo deseas -->
     </section>
 
-    <!-- 🔹 Sección Contacto -->
+    <!-- 🔹 CONTACTO -->
     <section id="contacto" class="seccion form-section">
         <h2>Contacto</h2>
         <form>
@@ -169,7 +379,7 @@
         </form>
     </section>
 
-    <!-- 🔹 Sección Iniciar Sesión -->
+    <!-- 🔹 LOGIN -->
     <section id="login" class="seccion form-section">
         <h2>Iniciar Sesión</h2>
         <form>
@@ -181,11 +391,10 @@
         </form>
     </section>
 
-    <!-- 🔹 Footer -->
+    <!-- 🔹 FOOTER -->
     <footer>
-        <p>&copy; 2025 Universidad Peruana Los Andes</p>
+        <p>&copy; 2025 Universidad Peruana Los Andes | Desarrollado por Wilson Samir Flores Estrella</p>
     </footer>
 
 </body>
 </html>
-
